@@ -1,0 +1,24 @@
+- name: Run tests
+  # ... your test step here
+
+#The following job will send build succes status to the slack bot 
+- name: Notify slack success
+  if: success()
+  env:
+    SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }} ## will be set by admin
+  uses: voxmedia/github-action-slack-notify-build@v1
+  with:
+    channel: build-notifs
+    status: SUCCESS
+    color: good
+
+#The following job will send build fail status to the slack bot 
+- name: Notify slack fail
+  if: failure()
+  env:
+    SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }} ## will be set by admin
+  uses: voxmedia/github-action-slack-notify-build@v1
+  with:
+    channel: build-notifs
+    status: FAILED
+    color: danger
