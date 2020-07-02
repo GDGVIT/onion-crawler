@@ -1,2 +1,4 @@
 pproxy
 scrapy
+nltk
+beautifulsoup4
