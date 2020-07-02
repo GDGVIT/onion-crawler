@@ -101,3 +101,8 @@ DOWNLOADER_MIDDLEWARES = {
     'dark_web_scraping.middlewares.ProxyMiddleware': 410,
     'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
 }
+
+FEED_FORMAT="json"
+FEED_URI= "scraped_data.json" #"scraped_data_%(name)s_%(time)s.json"
+
+DEPTH_LIMIT = 3 # You may comment this for infinite level of depth
