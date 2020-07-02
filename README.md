@@ -12,9 +12,9 @@
 
 
 ## Functionalities
-- [ ]  fetch onion links
-- [ ]  recursive fetching
-- [ ]  store scrapped data
+- [-]  fetch onion links
+- [-]  recursive fetching
+- [-]  store scrapped data
 
 <br>
 
