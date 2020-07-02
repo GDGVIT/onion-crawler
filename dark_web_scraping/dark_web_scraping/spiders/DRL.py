@@ -24,7 +24,7 @@ def cleanme(content):
     - Create Word List
     - Remove Stop words (English)
     - Use Steaming
-    - Word Count
+    - Word Count | TF-IDF
     """
     # Remove Tags
     cleaner = lxml.html.clean.Cleaner(
@@ -53,7 +53,14 @@ def cleanme(content):
     tokens = [stemmer.stem(t) for t in filtered_words]
 
     # Word Count
-    return dict(Counter(tokens))
+    # return dict(Counter(tokens))
+
+    # TF-IDF
+    word_counter = Counter(tokens)
+    total_words = sum(word_counter.values())
+    for key in word_counter:
+        word_counter[key] = word_counter[key]/total_words
+    return word_counter
 
 
 class DrlSpider(scrapy.Spider):
