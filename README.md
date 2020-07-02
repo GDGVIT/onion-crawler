@@ -52,7 +52,7 @@ scrapy crawl name_of_spider # DRL
 <img src = "https://miro.medium.com/fit/c/160/160/2*_T9qFh8Bg-Mc6UX8JAMtvg.jpeg" width="150" height="150" alt="1UC1F3R616">
 </p>
 <p align="center">
-<a href = "https://github.com/1UC1F3R616"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+<a href = "https://github.com/1UC1F3R616"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36" alt="Github of Kush Choudhary aka 1UC1F3R616"/></a>
 <a href = "https://www.linkedin.com/in/kush-choudhary-567b38169/">
 <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
 </a>
