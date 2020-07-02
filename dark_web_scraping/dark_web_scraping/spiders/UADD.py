@@ -1,13 +1,13 @@
 from collections import Counter
 import lxml.html.clean
 from string import punctuation
-import os 
+import os
+import logging
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 import scrapy
 from scrapy.utils.log import configure_logging
-import logging
 from nltk.corpus import stopwords
 from nltk import PorterStemmer
 from bs4 import BeautifulSoup

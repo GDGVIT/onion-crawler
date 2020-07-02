@@ -1,8 +1,10 @@
 from collections import Counter
 import lxml.html.clean
 from string import punctuation
+import logging
 
 import scrapy
+from scrapy.utils.log import configure_logging
 from nltk.corpus import stopwords
 from nltk import PorterStemmer
 from bs4 import BeautifulSoup
@@ -82,6 +84,14 @@ class DrlSpider(scrapy.Spider):
                         ['http://link6i54qxpk3ac7.onion/cat/12/page/{}'.format(page) for page in range(1, 12)] + \
                         ['http://link6i54qxpk3ac7.onion/cat/13/page/{}'.format(page) for page in range(1, 32)]
                         
+
+    # Logging
+    configure_logging(install_root_handler=False)
+    logging.basicConfig(
+        filename='DRL_LOGS.log',
+        format='%(levelname)s %(asctime)s: %(message)s',
+        level=logging.INFO
+    ) 
 
     def parse(self, response):
 
