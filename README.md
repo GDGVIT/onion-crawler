@@ -3,7 +3,7 @@
 	<img src="https://user-images.githubusercontent.com/30529572/72455010-fb38d400-37e7-11ea-9c1e-8cdeb5f5906e.png" />
 </a>
 	<h2 align="center"> Onion Crawler </h2>
-	<h4 align="center"> Scrape and Store Dark Web Sites | A Crawler for Dark Web <h4>
+	<h4 align="center"> Scrape and Store Dark Web Sites | Crawler for Dark Web | Search Engine Oriented <h4>
 </p>
 
 ---
