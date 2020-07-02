@@ -12,10 +12,32 @@
 
 
 ## Functionalities
-- [ ]  fetch onion links
-- [ ]  recursive fetching
-- [ ]  store scrapped data
+- [x] fetch onion links
+- [x] recursive fetching
+- [x] store scrapped data
+- [x] user added url
+- [x] url blacklisting
 
+<br>
+
+## Increasing the crawler reach
+```txt
+Increase Crawl Depth
+Add More starter links
+Create more spiders with special focus on Directories
+```
+
+<br>
+
+## Spiders
+- `DRL` Link Dir Onion
+	- A big directory of urls
+- `UADD` User Added
+	- Added by user
+	- presently links are appened in _user_added_urls.txt_ under spider_data
+	- Crawled in exactly similar fashion as to DRL
+
+	
 <br>
 
 
