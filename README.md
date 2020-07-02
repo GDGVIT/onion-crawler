@@ -12,9 +12,11 @@
 
 
 ## Functionalities
-- [-]  fetch onion links
-- [-]  recursive fetching
-- [-]  store scrapped data
+- [x] fetch onion links
+- [x] recursive fetching
+- [x] store scrapped data
+- [x] user added url
+- [x] url blacklisting
 
 <br>
 
