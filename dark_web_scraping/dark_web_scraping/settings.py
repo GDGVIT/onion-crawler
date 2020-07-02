@@ -103,6 +103,7 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 FEED_FORMAT="json"
-FEED_URI= "scraped_data.json" #"scraped_data_%(name)s_%(time)s.json"
+# FEED_URI= "scraped_data.json"
+FEED_URI= "scraped_data_%(name)s_%(time)s.json"
 
-DEPTH_LIMIT = 3 # You may comment this for infinite level of depth
+DEPTH_LIMIT = 5 # You may comment this for infinite level of depth

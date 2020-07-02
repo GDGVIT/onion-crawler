@@ -53,30 +53,47 @@ def cleanme(content):
     tokens = [stemmer.stem(t) for t in filtered_words]
 
     # Word Count
-    # return dict(Counter(tokens))
+    return dict(Counter(tokens))
 
     # TF-IDF
-    word_counter = Counter(tokens)
-    total_words = sum(word_counter.values())
-    for key in word_counter:
-        word_counter[key] = word_counter[key]/total_words
-    return word_counter
+    # word_counter = Counter(tokens)
+    # total_words = sum(word_counter.values())
+    # for key in word_counter:
+    #     word_counter[key] = word_counter[key]/total_words
+    # return word_counter
 
 
 class DrlSpider(scrapy.Spider):
+
     name = 'DRL'
     allowed_domains = ['onion']
-    # start_urls = ['http://link6i54qxpk3ac7.onion/cat/1']
-    start_urls = ['http://link6i54qxpk3ac7.onion/cat/9/page/{}'.format(page) for page in range(1, 5)]
+
+    start_urls =    ['http://link6i54qxpk3ac7.onion/cat/1/page/{}'.format(page) for page in range(1, 41)] + \
+                        ['http://link6i54qxpk3ac7.onion/cat/2/page/{}'.format(page) for page in range(1, 23)] + \
+                        ['http://link6i54qxpk3ac7.onion/cat/3/page/{}'.format(page) for page in range(1, 14)] + \
+                        ['http://link6i54qxpk3ac7.onion/cat/4/page/{}'.format(page) for page in range(1, 7)] + \
+                        ['http://link6i54qxpk3ac7.onion/cat/5/page/{}'.format(page) for page in range(1, 27)] + \
+                        ['http://link6i54qxpk3ac7.onion/cat/6/page/{}'.format(page) for page in range(1, 12)] + \
+                        ['http://link6i54qxpk3ac7.onion/cat/7/page/{}'.format(page) for page in range(1, 7)] + \
+                        ['http://link6i54qxpk3ac7.onion/cat/8/page/{}'.format(page) for page in range(1, 9)] + \
+                        ['http://link6i54qxpk3ac7.onion/cat/9/page/{}'.format(page) for page in range(1, 6)] + \
+                        ['http://link6i54qxpk3ac7.onion/cat/10/page/{}'.format(page) for page in range(1, 48)] + \
+                        ['http://link6i54qxpk3ac7.onion/cat/11/page/{}'.format(page) for page in range(1, 6)] + \
+                        ['http://link6i54qxpk3ac7.onion/cat/12/page/{}'.format(page) for page in range(1, 12)] + \
+                        ['http://link6i54qxpk3ac7.onion/cat/13/page/{}'.format(page) for page in range(1, 32)]
+                        
 
     def parse(self, response):
 
         soup = BeautifulSoup(response.body, "html.parser")
         links = set()
-        for link in soup.findAll('a'):
-            inspect_link = link.get('href')
-            if '.onion' in inspect_link:
-                links.update({inspect_link})
+        try:
+            for link in soup.findAll('a'):
+                inspect_link = link.get('href')
+                if '.onion' in inspect_link:
+                    links.update({inspect_link})
+        except:
+            pass
 
         # Title
         title = cleanme(soup.title.text)
@@ -99,7 +116,8 @@ class DrlSpider(scrapy.Spider):
                 description = ''
 
         word_frequency = cleanme(response.text)
-        print(dir(response))
+        # print(dir(response))
+
         yield {
             'url': response.url,
             'title': title,
@@ -110,10 +128,11 @@ class DrlSpider(scrapy.Spider):
             'word_frequency': word_frequency
         }
 
-        # next_pages = links
+        # Recursion |  Change Depth Settings in Settings.py
+        next_pages = links
 
-        # for next_page in next_pages:
-        #     if next_page:
-        #         yield scrapy.Request(
-        #         response.urljoin(next_page),
-        #         callback=self.parse)
+        for next_page in next_pages:
+            if next_page:
+                yield scrapy.Request(
+                response.urljoin(next_page),
+                callback=self.parse)
