@@ -60,6 +60,11 @@ pproxy -l http://:8181 -r socks5://127.0.0.1:9150 -vv
 scrapy crawl name_of_spider # DRL
 ```
 
+## Sample JSON
+- [DRL](https://github.com/1UC1F3R616/onion-crawler/blob/master/dark_web_scraping/scraped_data_DRL_2020-07-02T00-58-53.json)
+- [UADD](https://github.com/1UC1F3R616/onion-crawler/blob/master/dark_web_scraping/scraped_data_UADD_2020-07-02T08-06-50.json)
+- [TF-IDF Type](https://github.com/1UC1F3R616/onion-crawler/blob/master/dark_web_scraping/scraped_data.json)
+
 ## Contributors
 
 <table>
