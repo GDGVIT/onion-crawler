@@ -32,7 +32,7 @@ Create more spiders with special focus on Directories
 ## Spiders
 - `DRL` Link Dir Onion
 	- A big directory of urls
-- 'UADD' User Added
+- `UADD` User Added
 	- Added by user
 	- presently links are appened in _user_added_urls.txt_ under spider_data
 	- Crawled in exactly similar fashion as to DRL
