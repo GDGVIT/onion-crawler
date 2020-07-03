@@ -96,7 +96,8 @@ class UaddSpider(scrapy.Spider):
             pass
 
         # Title
-        title = cleanme(soup.title.text)
+        title = soup.title.text
+        title_keywords = cleanme(title)
 
         # Meta Keywords & Description
         meta_tags = soup.find_all('meta')
@@ -121,6 +122,7 @@ class UaddSpider(scrapy.Spider):
         yield {
             'url': response.url,
             'title': title,
+            'title_keywords': title_keywords,
             'keywords': keywords,
             'description': description,
             'meta': response.meta,
