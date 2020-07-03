@@ -132,6 +132,7 @@ class DrlSpider(scrapy.Spider):
         yield {
             'url': response.url,
             'title': title,
+            'title_keywords': title_keywords,
             'keywords': keywords,
             'description': description,
             'meta': response.meta,
