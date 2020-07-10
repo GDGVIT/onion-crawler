@@ -68,6 +68,9 @@ scrapy crawl name_of_spider # DRL
 ## Instructional Video
 - [YouTube URL](https://www.youtube.com/watch?v=AGe3Mh91pNA)
 
+## Bigger Datasets
+- [DarkNet Dataset](https://1uc1f3r616.github.io/Dark-Net-Websites-Dataset/)
+
 ## Contributors
 
 <table>
