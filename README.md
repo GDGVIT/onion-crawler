@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://dscvit.com">
-	<img src="https://user-images.githubusercontent.com/41824020/92394292-e88c5a00-f13e-11ea-94f1-16a6fb4c07d9.png" />
+	<img src="https://user-images.githubusercontent.com/41824020/92394292-e88c5a00-f13e-11ea-94f1-16a6fb4c07d9.png" alt="dsc-vit logo"/>
 </a>
 	<h2 align="center"> Onion Crawler </h2>
 	<h4 align="center"> Scrape and Store Dark Web Sites | Crawler for Dark Web | Search Engine Oriented <h4>
