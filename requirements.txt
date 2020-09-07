@@ -2,3 +2,4 @@ pproxy
 scrapy
 nltk
 beautifulsoup4
+pymongo

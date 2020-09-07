@@ -1,3 +1,5 @@
+from ..items import DarkWebScrapingItem
+
 from collections import Counter
 import lxml.html.clean
 from string import punctuation
@@ -52,10 +54,11 @@ def cleanme(content):
     filtered_words = [word for word in word_list if word not in STOPS]
 
     # Steaming
-    tokens = [stemmer.stem(t) for t in filtered_words]
+    # tokens = [stemmer.stem(t) for t in filtered_words] # no stemming 06-09-2020 | will consider lemmatization
 
     # Word Count
-    return dict(Counter(tokens))
+    # return dict(Counter(tokens)) # no stemming
+    return dict(Counter(filtered_words))
 
     # TF-IDF
     # word_counter = Counter(tokens)
@@ -90,7 +93,7 @@ class DrlSpider(scrapy.Spider):
     logging.basicConfig(
         filename='DRL_LOGS.log',
         format='%(levelname)s %(asctime)s: %(message)s',
-        level=logging.INFO
+        level=logging.ERROR
     ) 
 
     def parse(self, response):
@@ -121,7 +124,8 @@ class DrlSpider(scrapy.Spider):
 
         for meta_tag in meta_tags:
             if meta_tag.get('name') in ['description', 'Description']:
-                description =  cleanme(meta_tag.get('content'))
+                # description =  cleanme(meta_tag.get('content')) # not cleaning description as it's not a part of search param | 06-09-2020
+                description =  str(meta_tag.get('content'))
                 break
             else:
                 description = ''
@@ -129,15 +133,39 @@ class DrlSpider(scrapy.Spider):
         word_frequency = cleanme(response.text)
         # print(dir(response))
 
+        ## Older yield
+        # yield {
+        #     'url': response.url,
+        #     'title': title,
+        #     'title_keywords': title_keywords,
+        #     'keywords': keywords,
+        #     'description': description,
+        #     'meta': response.meta,
+        #     'links': links,
+        #     'word_frequency': word_frequency
+        # }
+
+        ## New yield for API v1: 06-09-2020 | In v1 revision 2, we will be providing back the content also on a new endpoint
+        ## Removing proxy key from Meta Data
+        meta_data = {key:val for key, val in response.meta.items() if key not in ['proxy', 'download_timeout']}
+        # item = DarkWebScrapingItem()
+        # item['url'] = response.url
+        # item['title'] = title
+        # item['title_keywords'] = title_keywords
+        # item['keywords'] = keywords
+        # item['description'] = description
+        # item['meta'] = meta_data
+        # item['links'] = links
+
+        # yield item
+
         yield {
             'url': response.url,
             'title': title,
             'title_keywords': title_keywords,
             'keywords': keywords,
             'description': description,
-            'meta': response.meta,
-            'links': links,
-            'word_frequency': word_frequency
+            'meta': meta_data,
         }
 
         # Recursion |  Change Depth Settings in Settings.py
