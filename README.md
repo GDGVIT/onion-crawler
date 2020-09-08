@@ -1,13 +1,13 @@
 <p align="center">
 <a href="https://dscvit.com">
-	<img src="https://user-images.githubusercontent.com/30529572/72455010-fb38d400-37e7-11ea-9c1e-8cdeb5f5906e.png" />
+	<img src="https://user-images.githubusercontent.com/41824020/92394292-e88c5a00-f13e-11ea-94f1-16a6fb4c07d9.png" alt="dsc-vit logo"/>
 </a>
 	<h2 align="center"> Onion Crawler </h2>
 	<h4 align="center"> Scrape and Store Dark Web Sites | Crawler for Dark Web | Search Engine Oriented <h4>
 </p>
 
 ---
-[![DOCS](https://img.shields.io/badge/Documentation-see%20docs-green?style=flat-square&logo=appveyor)](INSERT_LINK_FOR_DOCS_HERE) 
+[![DOCS](https://img.shields.io/badge/Documentation-see%20docs-green?style=flat-square&logo=appveyor)](https://documenter.getpostman.com/view/9118595/TVCiUS16) 
   [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](INSERT_UI_LINK_HERE)
 
 
@@ -67,6 +67,9 @@ scrapy crawl name_of_spider # DRL
 
 ## Instructional Video
 - [YouTube URL](https://www.youtube.com/watch?v=AGe3Mh91pNA)
+
+## Bigger Datasets
+- [DarkNet Dataset](https://1uc1f3r616.github.io/Dark-Net-Websites-Dataset/)
 
 ## Contributors
 

@@ -62,9 +62,14 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'dark_web_scraping.pipelines.DarkWebScrapingPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'dark_web_scraping.pipelines.DarkWebScrapingPipeline': 300,
+}
+# MONGODB_SERVER = "localhost"
+# MONGODB_PORT = 27017
+# MONGODB_DB = "onion-crawler"
+# MONGODB_COLLECTION = "data"
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
@@ -103,7 +108,7 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 FEED_FORMAT="json"
-# FEED_URI= "scraped_data.json"
+# FEED_URI= "scraped_data.csv"
 FEED_URI= "scraped_data_%(name)s_%(time)s.json"
 
 DEPTH_LIMIT = 5 # You may comment this for infinite level of depth
