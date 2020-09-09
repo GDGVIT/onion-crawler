@@ -54,7 +54,7 @@ Create more spiders with special focus on Directories
 pip install -r requirements.txt
 ```
 
-* < directions to execute > (For commit https://github.com/1UC1F3R616/onion-crawler/commit/75b0cbdabc4b2591e6c75ccf08a9fc127e7a4967)
+#### < directions to execute > (For commit of [Jul 10, 2020](https://github.com/1UC1F3R616/onion-crawler/commit/75b0cbdabc4b2591e6c75ccf08a9fc127e7a4967))
 - This commit contains pipeline to generate data in csv/json file
 - You can run this without much effort
 
@@ -64,7 +64,7 @@ pproxy -l http://:8181 -r socks5://127.0.0.1:9150 -vv
 scrapy crawl name_of_spider # DRL
 ```
 
-* < directions to execute > (After commit Jul 10, 2020)
+#### < directions to execute > (After commit Jul 10, 2020)
 - This commit contains data pipeline to save data on MongoDB Server
 - You need to setup MongoDB Server connection credentials and URI in settings.py/pipeline.py file
 
