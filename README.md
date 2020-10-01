@@ -45,11 +45,11 @@ Create more spiders with special focus on Directories
 
 ## Instructions to run
 
-* Pre-requisites:
+#### Pre-requisites:
 	-  Py3
 	-  Tor
 
-* < directions to install > 
+#### < directions to install > 
 ```bash
 pip install -r requirements.txt
 ```
@@ -81,6 +81,7 @@ scrapy crawl name_of_spider # DRL
 
 ## StoryBoarding
 Idea hamster: --
+
 Developer: I had prior experience with web scraping but hadn't worked with web crawlers before and scraping the deep-web was also something new to me as it required setting up tor proxy. This project developed my interest in the web-mining subject and therefore it encorged me to take this subject as a subject in college curriculum. 
 
 ## Contributors
